@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			plane.setAttribute('rotation', {x:-90,y:0,z:0})
 			plane.setAttribute('width',4)
 			plane.setAttribute('height',4)
-			plane.setAttribute('color',"#78BC8A4")
+			plane.setAttribute('color',"#7BC8A4")
 			scene.appendChild(plane)
 
         // Plane
