@@ -53,7 +53,6 @@ AFRAME.registerComponent('basic-scene', {
 	cylinder.setAttribute('color', "#00C65D");
 	this.el.appendChild(cylinder)
 	
-	var aux=2;
         
 	
 	cylinder.addEventListener('click', function() {
@@ -65,16 +64,12 @@ AFRAME.registerComponent('basic-scene', {
 		cylinderAux.setAttribute('color', "#FFC65D");
 
 		console.log(auxiliar)
-		cylinderAux.setAttribute('animation', {'property': 'position', 'to': {x:0,y:200,z:0},'dur':10000})
+		cylinderAux.setAttribute('animation', {'property': 'position', 'to': {x:0,y:200,z:0},'dur':5000})
+		cylinderAux.setAttribute('sound', "src: url('popsound.mp3'); on: click")
 		cylinderAux.addEventListener('click',function() {
-			cylinderAux.setAttribute('sound', "src: url('popsound.mp3'); on: click")
 			cylinderAux.setAttribute('visible', 'false')
 		})
 		
-		if (aux == 6) {
-		 aux = 1
-		}
-		aux++;
 		document.querySelector('a-scene').appendChild(cylinderAux)
 	})
 
