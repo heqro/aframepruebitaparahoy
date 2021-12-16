@@ -57,13 +57,15 @@ AFRAME.registerComponent('basic-scene', {
         
 	
 	cylinder.addEventListener('click', function() {
-	
+			var auxiliar = Math.floor( Math.random() * 7 )
 		let cylinderAux = document.createElement('a-cylinder');
-		cylinderAux.setAttribute('position', {x:aux, y:0.75, z: -3} );
+		cylinderAux.setAttribute('position', {x:auxiliar, y:0.75, z: -3} );
 		cylinderAux.setAttribute('radius', 0.5);
 		cylinderAux.setAttribute('height', 3.5);
 		cylinderAux.setAttribute('color', "#FFC65D");
-		cylinderAux.setAttribute('animation', {'property': 'position', 'to': {x:aux,y:200,z:0},'dur':10000})
+
+		console.log(auxiliar)
+		cylinderAux.setAttribute('animation', {'property': 'position', 'to': {x:0,y:200,z:0},'dur':10000})
 		cylinderAux.addEventListener('click',function() {
 			cylinderAux.setAttribute('visible', 'false')
 		})
