@@ -20,6 +20,13 @@ window.addEventListener('DOMContentLoaded', function() {
         sphere.setAttribute('color', "#EF2D5E");
         scene.appendChild(sphere);
 
+			let cylinder = document.createElement('a-cylinder');
+			cylinder.setAttribute('position', {x:1, y:0.75, z: -3} );
+			cylinder.setAttribute('radius', 0.5);
+			cylinder.setAttribute('height', 1.5);
+			cylinder.setAttribute('color', "#FFC65D");
+			scene.appendChild(cylinder)
+
         // Cylinder
         // <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
 
