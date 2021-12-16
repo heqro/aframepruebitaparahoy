@@ -40,7 +40,7 @@ AFRAME.registerComponent('basic-scene', {
         // Cylinder
         // <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
         
-        let aux=1;
+        let aux=2;
         
         let cylinder = document.createElement('a-cylinder');
 	cylinder.setAttribute('position', {x:1, y:0.75, z: -3} );
@@ -50,7 +50,7 @@ AFRAME.registerComponent('basic-scene', {
 	this.el.appendChild(cylinder)
 	cylinder.addEventListener('click', function() {
 		 let cylinderAux = document.createElement('a-cylinder');
-		cylinderAux.setAttribute('position', {x:aux++, y:0.75, z: -3} );
+		cylinderAux.setAttribute('position', {x:aux, y:0.75, z: -3} );
 		cylinderAux.setAttribute('radius', 0.5);
 		cylinderAux.setAttribute('height', 3.5);
 		cylinderAux.setAttribute('color', "#FFC65D");
