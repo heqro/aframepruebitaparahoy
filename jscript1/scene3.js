@@ -46,7 +46,7 @@ AFRAME.registerComponent('basic-scene', {
 	cylinder.setAttribute('position', {x:1, y:0.75, z: -3} );
 	cylinder.setAttribute('radius', 0.5);
 	cylinder.setAttribute('height', 1.5);
-	cylinder.setAttribute('color', "#FFC65D");
+	cylinder.setAttribute('color', "#00C65D");
 	this.el.appendChild(cylinder)
 	cylinder.addEventListener('click', function() {
 		 let cylinderAux = document.createElement('a-cylinder');
