@@ -15,11 +15,13 @@ AFRAME.registerComponent('basic-scene', {
         box.setAttribute('position', {x: -1, y: 0.5, z: -3});
         box.setAttribute('rotation', {x: 0, y: 45, z: 0});
         box.setAttribute('color', "#4CC3D9");
-        box.setAttribute('animation', {'startEvents': 'click',
-                                       'property': 'position',
-                                       'from': {x: -1, y: 1.5, z: -3},
-                                       'to': {x: -1, y: 0.5, z: -3},
-                                       'dur': 1000});
+        
+        
+        //box.setAttribute('animation', {'startEvents': 'click',
+//                                       'property': 'position',
+  //                                     'from': {x: -1, y: 1.5, z: -3},
+    //                                   'to': {x: -1, y: 0.5, z: -3},
+      //                                 'dur': 1000});
         this.el.appendChild(box); 
 
         // Sphere
@@ -40,23 +42,44 @@ AFRAME.registerComponent('basic-scene', {
         // Cylinder
         // <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
         
-        var aux=2;
+        function add(objeto) {
+            this.el.appendChild(objeto)
+        }
         
         let cylinder = document.createElement('a-cylinder');
 	cylinder.setAttribute('position', {x:1, y:0.75, z: -3} );
 	cylinder.setAttribute('radius', 0.5);
 	cylinder.setAttribute('height', 1.5);
-	cylinder.setAttribute('color', "#FFC65D");
+	cylinder.setAttribute('color', "#00C65D");
 	this.el.appendChild(cylinder)
+	
+	var aux=2;
+        
+	
 	cylinder.addEventListener('click', function() {
-		 let cylinderAux = document.createElement('a-cylinder');
-		cylinderAux.setAttribute('position', {x:aux, y:0.75, z: -3} );
-		aux++;
+			var auxiliar = Math.floor( Math.random() * 7 )
+		let cylinderAux = document.createElement('a-cylinder');
+		cylinderAux.setAttribute('position', {x:auxiliar, y:0.75, z: -3} );
 		cylinderAux.setAttribute('radius', 0.5);
 		cylinderAux.setAttribute('height', 3.5);
 		cylinderAux.setAttribute('color', "#FFC65D");
-		this.el.appendChild(cylinderAux)
+
+		console.log(auxiliar)
+		cylinderAux.setAttribute('animation', {'property': 'position', 'to': {x:0,y:200,z:0},'dur':10000})
+		cylinderAux.setAttribute('sound', "src: url('popsound.mp3'); on: click")
+		cylinderAux.addEventListener('click',function() {
+			cylinderAux.setAttribute('visible', 'false')
+		})
+		
+		if (aux == 6) {
+		 aux = 1
+		}
+		aux++;
+		document.querySelector('a-scene').appendChild(cylinderAux)
 	})
+
+
+	
 
         // Plane
         // <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
