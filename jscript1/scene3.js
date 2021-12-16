@@ -67,6 +67,7 @@ AFRAME.registerComponent('basic-scene', {
 		console.log(auxiliar)
 		cylinderAux.setAttribute('animation', {'property': 'position', 'to': {x:0,y:200,z:0},'dur':10000})
 		cylinderAux.addEventListener('click',function() {
+			cylinderAux.setAttribute('sound', "src: url('popsound.mp3'); on: click")
 			cylinderAux.setAttribute('visible', 'false')
 		})
 		
