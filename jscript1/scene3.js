@@ -64,6 +64,10 @@ AFRAME.registerComponent('basic-scene', {
 		cylinderAux.setAttribute('height', 3.5);
 		cylinderAux.setAttribute('color', "#FFC65D");
 		cylinderAux.setAttribute('animation', {'property': 'position', 'to': {x:aux,y:200,z:0},'dur':10000})
+		cylinderAux.addEventListener('click',function() {
+			cylinderAux.setAttribute('visible', 'false')
+		})
+		
 		if (aux == 6) {
 		 aux = 1
 		}
